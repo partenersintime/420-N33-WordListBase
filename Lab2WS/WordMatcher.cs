@@ -21,7 +21,14 @@ namespace Lab2WS
 
                     }
                     else
-                    { }
+                    {
+                        //convert strings into character arrays i.e. ToCharArray()
+                        //sort both character arrays
+                        //convert sorted character arrays into strings (toString)
+                        // 
+                        //compare the two sorted strings. If they match, build the MatchWord
+                        //struct and add to matchedWords list.
+                    }
 
                 }
             }
