@@ -5,6 +5,7 @@ namespace Lab2WS
 {
     class WordMatcher
     {
+        // Finished Match Method - Justin.M
         public List<MatchedWord> Match(string[] scrambledWords, string[] wordList)
         {
             List<MatchedWord> matchedWords = new List<MatchedWord>();
@@ -15,36 +16,24 @@ namespace Lab2WS
                 {
                     if (scrambledWord.Equals(word, StringComparison.OrdinalIgnoreCase))
                     {
-                        //matchedWords.Add(BuildMatchedWord(scrambledWord, word));
-
                         matchedWords.Add(new MatchedWord() { ScrambledWord = scrambledWord, Word = word });
-
                     }
                     else
                     {
-                        //convert strings into character arrays i.e. ToCharArray()
-                        //sort both character arrays
-                        //convert sorted character arrays into strings (toString)
-                        // 
-                        //compare the two sorted strings. If they match, build the MatchWord
-                        //struct and add to matchedWords list.
+                        char[] wordScr = scrambledWord.ToCharArray(); Array.Sort(wordScr); 
+                        String scrString = wordScr.ToString();
+                        char[] word1 = word.ToCharArray(); Array.Sort(word1); 
+                        String word1String = word1.ToString();
+                        if(scrString == word1String)
+                        {
+                            matchedWords.Add(new MatchedWord() { ScrambledWord = scrambledWord, Word = word });
+                        }
                     }
 
                 }
             }
 
             return null;
-        }
-
-        MatchedWord BuildMatchedWord(string scrambledWord, string word)
-        {
-            MatchedWord matchedWord = new MatchedWord()
-            {
-                ScrambledWord = scrambledWord,
-                Word = word
-            };
-
-            return matchedWord;
         }
 
 
