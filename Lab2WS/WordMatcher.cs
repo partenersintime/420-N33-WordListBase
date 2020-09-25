@@ -33,7 +33,7 @@ namespace Lab2WS
                 }
             }
 
-            return null;
+            return matchedWords;
         }
 
 
