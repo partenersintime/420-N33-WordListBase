@@ -59,6 +59,7 @@ namespace Lab2WS
 
         }
 
+        // Finished DisplayMatchedScrambledWords Method - Justin. M
         private static void DisplayMatchedScrambledWords(string[] scrambledWords)
         {
             string[] wordList = fileReader.Read(@"wordlist.txt"); // Put in a constants file. CAPITAL LETTERS.  READONLY.
