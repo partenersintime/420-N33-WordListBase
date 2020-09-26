@@ -65,6 +65,18 @@ namespace Lab2WS
 
             List<MatchedWord> matchedWords = wordMatcher.Match(scrambledWords, wordList);
 
+            if(matchedWords == null)
+            {
+                Console.WriteLine("No words found.");
+            }
+            else
+            {
+                foreach(MatchedWord matche in matchedWords)
+                {
+                    Console.WriteLine("MATCH FOUND FOR {0}: {1}", matche.Word, matche.ScrambledWord);
+                }
+            }
+
 
             // Rule:  Use a formatter to display ... eg:  {0}{1}
 

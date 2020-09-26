@@ -20,13 +20,16 @@ namespace Lab2WS
                     }
                     else
                     {
-                        char[] wordScr = scrambledWord.ToCharArray(); Array.Sort(wordScr); 
-                        String scrString = wordScr.ToString();
-                        char[] word1 = word.ToCharArray(); Array.Sort(word1); 
-                        String word1String = word1.ToString();
-                        if(scrString == word1String)
+                        char[] wordScr = scrambledWord.ToCharArray(); Array.Sort(wordScr);
+                        String scrString = new string(wordScr);
+                        char[] word1 = word.ToCharArray(); Array.Sort(word1);
+                        String word1String = new string(word1);
+                        if(scrString.Length == word1String.Length)
                         {
-                            matchedWords.Add(new MatchedWord() { ScrambledWord = scrambledWord, Word = word });
+                           if ((scrString).Equals(word1String))
+                           {
+                               matchedWords.Add(new MatchedWord() { ScrambledWord = scrambledWord, Word = word });
+                           }
                         }
                     }
 
