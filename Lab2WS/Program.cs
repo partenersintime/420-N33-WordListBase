@@ -51,11 +51,14 @@ namespace Lab2WS
             DisplayMatchedScrambledWords(scrambledWords);
         }
 
-        private static void ExecuteScrambledWordsManualEntryScenario()
+        private static void ExecuteScrambledWordsManualEntryScenario() // Finished ExecuteScrambledWordsManualEntryScenario method. - Justin Alves
         {
-            // 1 get the user's input - comma separated string containing scrambled words
-            // 2 Extract the words into a string (red,blue,green) 
-            // 3 Call the DisplayMatchedUnscrambledWords method passing the scrambled words string array
+
+            String input = Console.ReadLine();
+
+            var listWords = input.Split(',');
+
+            DisplayMatchedScrambledWords(listWords);
 
         }
 
