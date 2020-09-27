@@ -92,7 +92,7 @@ namespace Lab2WS
             {
                 foreach(MatchedWord matche in matchedWords)
                 {
-                    Console.WriteLine("MATCH FOUND FOR {0}: {1}", matche.Word, matche.ScrambledWord);
+                    Console.WriteLine("MATCH FOUND FOR {0}: {1}", matche.ScrambledWord, matche.Word);
                 }
             }
 
