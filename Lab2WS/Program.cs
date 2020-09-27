@@ -15,7 +15,13 @@ namespace Lab2WS
                 Console.WriteLine("Enter the scrambled words manually or as a file: f - file, m = manual");
 
                 string option = Console.ReadLine() ?? throw new Exception("String is null");
-
+                
+                while (option != "M" && option != "m" && option != "F" && option != "f") // Added validation for user input. - Justin Alves
+                {
+                    Console.WriteLine("Input is invalid. Please enter either f - file, m = manual ");
+                    option = Console.ReadLine() ?? throw new Exception("String is null");
+                }
+                
                 switch (option.ToUpper())
                 {
                     case "F":
@@ -26,13 +32,11 @@ namespace Lab2WS
                         Console.WriteLine("Enter word(s) separated by a comma");
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
-                    default:
+                    default:                       
                         Console.WriteLine("The entered option was not recognized");
                         break;
                 }
 
-                // Optional for now (when you have no loop)  (Take out when finished)
-                Console.ReadKey();
 
             }
             catch (Exception e)
@@ -59,6 +63,26 @@ namespace Lab2WS
             var listWords = input.Split(',');
 
             DisplayMatchedScrambledWords(listWords);
+
+            Console.WriteLine("Would you like to continue? Y / N.");
+
+            String response = Console.ReadLine();
+
+            while (response.ToUpper() == "Y")
+            {
+                Console.WriteLine("Enter word(s) separated by a comma.");
+
+                input = Console.ReadLine();
+
+                var listWords2 = input.Split(',');
+
+                DisplayMatchedScrambledWords(listWords2);
+
+                Console.WriteLine("Would you like to continue? Y / N.");
+
+                response = Console.ReadLine();
+
+            }
 
         }
 
