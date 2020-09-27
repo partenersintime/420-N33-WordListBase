@@ -19,7 +19,7 @@ namespace Lab2WS
 
                     string option = Console.ReadLine() ?? throw new Exception(Constants.NULLSTRINGMSG);
 
-                    while (option != "M" && option != "m" && option != "F" && option != "f") // Added validation for user input. - Justin Alves
+                    while (option.ToUpper() != "M" && option.ToUpper() != "F") // Added validation for user input. - Justin Alves
                     {
                         Console.WriteLine(Constants.UNRECMSG);
                         option = Console.ReadLine() ?? throw new Exception(Constants.NULLSTRINGMSG);
@@ -64,10 +64,6 @@ namespace Lab2WS
             string fileName = Console.ReadLine();
             string[] scrambledWords = fileReader.Read(fileName);
             DisplayMatchedScrambledWords(scrambledWords);
-
-            
-
-
         }
 
         private static void ExecuteScrambledWordsManualEntryScenario() // Finished ExecuteScrambledWordsManualEntryScenario method. - Justin Alves
